@@ -1,0 +1,238 @@
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #a0a0ff;
+    --tertiary-color: #cccccc;
+    --background-color: #0a0a1a;
+    --card-background: rgba(20, 20, 40, 0.8);
+    --glow-color: rgba(160, 160, 255, 0.7);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+
+@keyframes move-twink-back {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+@keyframes move-clouds-back {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 10000px 0;
+    }
+}
+
+.stars,
+.twinkling,
+.clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: -1;
+}
+
+.stars {
+    background: #000 url(https://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+}
+
+.twinkling {
+    background: transparent url(https://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+    animation: move-twink-back 200s linear infinite;
+}
+
+.clouds {
+    background: transparent url(https://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
+    animation: move-clouds-back 200s linear infinite;
+    opacity: 0.3;
+}
+
+
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+
+.hero {
+    padding: 80px 20px 40px;
+    text-align: center;
+    border-bottom: 1px solid var(--secondary-color);
+    box-shadow: 0 5px 15px var(--glow-color);
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5em;
+    margin: 0 0 10px 0;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color);
+}
+
+.hero .subtitle {
+    font-size: 1.2em;
+    color: var(--tertiary-color);
+    font-weight: 300;
+}
+
+
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2em;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 0 0 5px var(--glow-color);
+    border-bottom: 1px solid rgba(160, 160, 255, 0.3);
+    padding-bottom: 10px;
+}
+
+
+section {
+    margin-bottom: 50px;
+    padding: 20px;
+    background: var(--card-background);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+
+.project-card {
+    background: rgba(30, 30, 60, 0.7);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    border: 1px solid rgba(160, 160, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.project-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 25px var(--glow-color);
+}
+
+.project-icon {
+    font-size: 2em;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    opacity: 0.5;
+}
+
+.project-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.project-card p {
+    color: var(--tertiary-color);
+    margin-bottom: 20px;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px 10px 5px 0;
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #c0c0ff;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--glow-color);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(160, 160, 255, 0.2);
+    color: #e0e0ff;
+}
+
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(160, 160, 255, 0.3);
+    color: var(--tertiary-color);
+    font-size: 0.9em;
+    position: relative;
+    z-index: 1;
+}
+
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .container {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero .subtitle {
+        font-size: 1em;
+    }
+
+    .btn {
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+    }
+}
